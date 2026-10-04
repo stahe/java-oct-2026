@@ -1,0 +1,983 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apprentissage du langage [Java 25]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/java-oct-2026/introduction.html">
+      
+      
+        <link rel="prev" href="index.html">
+      
+      
+        <link rel="next" href="installation-de-lenvironnement-de-travail.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>1. Introduction - Apprentissage du langage [Java 25]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Apprentissage du langage [Java 25]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Apprentissage du langage [Java 25]" class="md-header__button md-logo" aria-label="Apprentissage du langage [Java 25]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Apprentissage du langage [Java 25]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1. Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/java-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Apprentissage du langage [Java 25]" class="md-nav__button md-logo" aria-label="Apprentissage du langage [Java 25]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Apprentissage du langage [Java 25]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/java-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="introduction.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-java-de-1995-a-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Java de 1995 à 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-le-contenu-du-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Le contenu du document
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-le-fil-rouge-le-calcul-de-limpot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Le fil rouge : le calcul de l&#x27;impôt
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-les-exemples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Les exemples
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-les-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.5. Les sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation-de-lenvironnement-de-travail.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Installation de l'environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-bases-du-langage-java.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Les bases du langage Java
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes-records-interfaces.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Classes, records, interfaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes-java-dusage-courant.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Classes Java d'usage courant
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architectures-en-couches.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Architectures en couches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="interfaces-fonctionnelles-lambdas-et-evenements.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Interfaces fonctionnelles, lambdas et événements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="les-threads-dexecution.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Les threads d'exécution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="la-programmation-asynchrone.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. La programmation asynchrone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lacces-aux-bases-de-donnees-avec-jdbc.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. L'accès aux bases de données avec JDBC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Hibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="programmation-internet.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Programmation Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="services-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Services web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="pour-aller-plus-loin.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Pour aller plus loin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annexes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Annexes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-introduction">1. <span style="color: #2e74b5">Introduction</span></h1>
+<p>Le PDF du document est <a href="https://1drv.ms/b/c/f53a919f43d27eb5/IQCE45gjkQrBRJtp-tFSOEZ2AUV-Je7w62NSc9xlIMLFtRk?e=Ctqrw1">ICI</a>.</p>
+<p>Les codes du document sont <a href="https://1drv.ms/u/c/f53a919f43d27eb5/IQB1iopFCJI1RpPBIAQldJE_AXKnKH9eah_JnH5kl8ES-dU?e=NMML3I">ICI</a>.</p>
+<p>Ce document est un produit de l&#x27;IA Claude d&#x27;Anthropic. C&#x27;est le portage en Java du cours <a href="https://stahe.github.io/csharp-oct-2026/">Apprentissage du langage C# 14 avec .NET 10</a> (octobre 2026), lui-même réécriture du cours <a href="https://stahe.github.io/csharp-mai-2008/">Apprentissage du langage C# version 3.0 avec le framework .NET 3.5</a> écrit par Serge Tahé en mai 2008. Il en reprend le plan, les exemples et le fil rouge, et les écrit dans le Java d&#x27;aujourd&#x27;hui :</p>
+<ul>
+<li>le document utilise <strong>Java 25</strong> (septembre 2025), la dernière version de Java à <strong>support long</strong> (LTS), et présente au fil des chapitres les nouveautés du langage, des fichiers source compacts de Java 25 aux threads virtuels de Java 21 en passant par les records, les classes scellées et le filtrage par motif ;</li>
+<li>là où les deux langages diffèrent, le document ne se contente pas de traduire : les propriétés, les structures, la surcharge des opérateurs ou les délégués de C# n&#x27;existent pas en Java, qui a ses propres réponses (accesseurs, records, interfaces fonctionnelles) ; à l&#x27;inverse, Java a des notions qui lui sont propres, comme les <strong>exceptions contrôlées</strong> ou les <strong>threads virtuels</strong>, et elles sont présentées en détail ;</li>
+<li>deux chapitres changent de nature : la programmation asynchrone, que Java aborde avec les classes <em>[CompletableFuture]</em> et les threads virtuels plutôt qu&#x27;avec des mots clés <em>[async]</em> / <em>[await]</em>, et la correspondance objet / relationnel, assurée par <strong>Hibernate</strong>, l&#x27;ORM le plus utilisé du monde Java ;</li>
+<li>les bibliothèques sont celles que l&#x27;on utilise aujourd&#x27;hui en Java : <em>[JUnit 6]</em> pour les tests, <em>[Spring Framework 7]</em> pour l&#x27;injection de dépendances, <em>[Jackson 3]</em> pour JSON, le pilote <em>[MySQL Connector/J]</em> pour JDBC, <em>[Hibernate 7]</em> et <em>[Spring Boot 4]</em> pour les services web ; les projets sont construits avec <em>[Maven]</em>.</li>
+</ul>
+<p>Ce document n&#x27;est pas un cours exhaustif. Comme ceux dont il est issu, il est destiné à des personnes connaissant déjà la programmation et qui veulent découvrir les bases de Java. Il procède par l&#x27;exemple : plus de deux cents programmes (plus de trois cents fichiers Java), courts pour la plupart, commentés ligne par ligne.</p>
+<h2 id="11-java-de-1995-a-2026">1.1. <span style="color: #2e74b5">Java de 1995 à 2026</span></h2>
+<p>Java a été rendu public par Sun Microsystems en mai 1995. Il repose sur une idée qui a fait son succès : le compilateur <em>[javac]</em> ne produit pas du code machine mais un code intermédiaire, le <strong>bytecode</strong>, rangé dans des fichiers <em>[.class]</em>, que la <strong>machine virtuelle Java</strong> (la JVM, « Java Virtual Machine ») exécute en le compilant à la volée en code machine. Un même programme compilé s&#x27;exécute ainsi sous Windows, Linux ou macOS : « write once, run anywhere ». Les langages Kotlin, Scala ou Groovy produisent eux aussi du bytecode et utilisent les mêmes bibliothèques.</p>
+<p>Les grandes étapes :</p>
+<ul>
+<li><strong>2006-2007 : OpenJDK</strong>. Sun publie le code du JDK sous licence libre (GPL). Toutes les distributions actuelles de Java sont construites à partir d&#x27;OpenJDK ;</li>
+<li><strong>2010 : Oracle</strong> rachète Sun et devient le principal contributeur de Java ;</li>
+<li><strong>2014 : Java 8</strong>, une version charnière : expressions lambda, API Stream, nouvelle API des dates (<em>[java.time]</em>). Beaucoup de programmes en production sont encore écrits dans ce style ;</li>
+<li><strong>depuis 2017 (Java 9)</strong> : une nouvelle version de Java paraît <strong>tous les six mois</strong>, en mars et en septembre. Certaines versions sont à <strong>support long</strong> (LTS, « Long-Term Support ») : Java 11 (2018), 17 (2021), 21 (2023) et <strong>25 (septembre 2025)</strong>, utilisée dans ce document ; depuis Java 17, il en paraît une tous les deux ans. Les autres versions ne sont maintenues que six mois ; les nouveautés y apparaissent souvent d&#x27;abord en « aperçu » (« preview »), avant d&#x27;être finalisées dans une version suivante ;</li>
+<li>le JDK est distribué par plusieurs fournisseurs, tous construits à partir d&#x27;OpenJDK et équivalents pour notre usage : Oracle, la fondation Eclipse (<strong>Eclipse Temurin</strong>, projet Adoptium), Microsoft, Amazon (Corretto), les distributions Linux.</li>
+</ul>
+<p>Le langage a beaucoup évolué depuis Java 8. Le tableau suivant résume les principales nouveautés présentées dans ce document et indique le chapitre où elles apparaissent :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Version</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Année</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Principales nouveautés</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Chapitre</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 8</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2014</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">expressions lambda, références de méthodes, API Stream, méthodes <i><b>[default]</b></i> des interfaces, <i>[java.time]</i>, <i>[CompletableFuture]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5, 7, 9</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 9</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2017</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">modules (JPMS), <i>[jshell]</i>, collections non modifiables <i><b>[List.of]</b></i>, <i><b>[Map.of]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2, 4, 5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 10</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2018</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">inférence du type des variables locales <i><b>[var]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 11</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2018</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">client HTTP <i>[java.net.http.HttpClient]</i>, exécution directe d&#x27;un fichier source <i><b>[java Fichier.java]</b></i>, méthodes <i><b>[strip]</b></i>, <i><b>[repeat]</b></i>, <i><b>[lines]</b></i> des chaînes</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2, 5, 12</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 14</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2020</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">expressions <i><b>[switch]</b></i> (<i><b>[case -&gt;]</b></i>, <i><b>[yield]</b></i>), messages détaillés des <i>[NullPointerException]</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 15</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2020</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">blocs de texte <i><b>[&quot;&quot;&quot;]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 16</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2021</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">records, filtrage par motif avec <i><b>[instanceof]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 17</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2021</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">classes et interfaces scellées (<i><b>[sealed]</b></i>, <i><b>[permits]</b></i>)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 18</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2022</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">UTF-8 comme encodage par défaut</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 21</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2023</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">threads virtuels, collections séquencées, filtrage par motif dans <i><b>[switch]</b></i>, motifs de records</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4, 5, 8, 9</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 22</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2024</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">variables et paramètres anonymes <i><b>[_]</b></i>, lancement de programmes de plusieurs fichiers source</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3, 4, 7</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 24</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2025</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">collecteurs intermédiaires des flux (<i>[Gatherers]</i>)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5, 7</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">Java 25</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2025</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">fichiers source compacts et méthodes <i><b>[main]</b></i> d&#x27;instance, classe <i>[IO]</i>, importation de modules, valeurs à portée (<i>[ScopedValue]</i>)</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2, 3, 8</div></td></tr></table>
+
+<p>Du côté des bibliothèques et des outils, les nouveautés présentées sont notamment : l&#x27;outil de construction <em>[Maven]</em>, les collections modernes, l&#x27;API Stream, l&#x27;API <em>[java.nio.file]</em> des fichiers, les classes de <em>[java.util.concurrent]</em>, le client HTTP de Java 11, et les grands cadriciels de l&#x27;écosystème : JUnit, Spring, Jackson, Hibernate et Spring Boot.</p>
+<h2 id="12-le-contenu-du-document">1.2. <span style="color: #2e74b5">Le contenu du document</span></h2>
+<p>Le document comprend les chapitres suivants :</p>
+<ul>
+<li><strong>chapitre 2</strong> : l&#x27;installation de l&#x27;environnement de travail (JDK 25, IntelliJ IDEA ou VS Code, Maven, les commandes <em>[java]</em> et <em>[javac]</em>) ;</li>
+<li><strong>chapitre 3</strong> : les bases du langage (types, opérateurs, instructions de contrôle, exceptions contrôlées et non contrôlées, énumérations, passage de paramètres) ;</li>
+<li><strong>chapitre 4</strong> : les classes, les records, les interfaces, l&#x27;héritage, les classes scellées, les génériques, les paquetages, le filtrage par motif ;</li>
+<li><strong>chapitre 5</strong> : les classes Java d&#x27;usage courant : chaînes, tableaux, collections, API Stream, fichiers texte et binaires, JSON avec Jackson, expressions régulières ;</li>
+<li><strong>chapitre 6</strong> : les architectures en couches, les tests unitaires avec JUnit 6 et l&#x27;injection de dépendances avec Spring ;</li>
+<li><strong>chapitre 7</strong> : les interfaces fonctionnelles, les expressions lambda et les événements ;</li>
+<li><strong>chapitre 8</strong> : les threads d&#x27;exécution, la synchronisation et les threads virtuels ;</li>
+<li><strong>chapitre 9</strong> : la programmation asynchrone avec <em>[CompletableFuture]</em> et les threads virtuels ;</li>
+<li><strong>chapitre 10</strong> : l&#x27;accès aux bases de données avec JDBC ;</li>
+<li><strong>chapitre 11</strong> : Hibernate ;</li>
+<li><strong>chapitre 12</strong> : la programmation Internet (TCP/IP, clients et serveurs TCP, HTTP avec <em>[HttpClient]</em>) ;</li>
+<li><strong>chapitre 13</strong> : les services web avec Spring Boot ;</li>
+<li><strong>chapitre 14</strong> : pour aller plus loin ;</li>
+<li><strong>annexes</strong> : l&#x27;installation de Laragon et de MySQL, les dépendances Maven utilisées.</li>
+</ul>
+<h2 id="13-le-fil-rouge-le-calcul-de-limpot">1.3. <span style="color: #2e74b5">Le fil rouge : le calcul de l&#x27;impôt</span></h2>
+<p>Un même problème est repris tout au long du document : le calcul de l&#x27;impôt sur le revenu d&#x27;un contribuable n&#x27;ayant que son salaire à déclarer. Le barème utilisé est celui du cours d&#x27;origine (revenus 2003) : il n&#x27;est plus d&#x27;actualité, mais il suffit à notre propos, qui est d&#x27;écrire la même application de plusieurs façons. Elle est construite en neuf versions :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Version</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Chapitre</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>Contenu</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">1</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">un programme unique : saisies validées, calcul, affichage</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">2</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">des classes et des interfaces : <i>[TrancheImpot]</i>, <i>[IImpot]</i>, <i>[AbstractImpot]</i>, <i>[HardwiredImpot]</i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">3</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">les données du calcul lues dans un fichier texte ou un fichier JSON</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">4</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">une architecture en couches <i>[dao]</i>, <i>[metier]</i>, <i>[ui]</i> dans un seul programme</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">5</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">un module Maven par couche, des tests unitaires et l&#x27;intégration des couches par injection de dépendances</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">6</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">10</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">une couche <i>[dao]</i> qui lit les données dans une base MySQL avec JDBC</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">7</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">11</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">une couche <i>[dao]</i> écrite avec Hibernate</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">8</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">12</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">un serveur TCP de calcul de l&#x27;impôt et son client</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">9</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">13</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">un service web REST de calcul de l&#x27;impôt, un client console et un client web</div></td></tr></table>
+
+<p>À partir de la version 5, les versions suivantes <strong>réutilisent</strong> les couches de la version 5 et ne remplacent que la couche qui change : c&#x27;est tout l&#x27;intérêt de l&#x27;architecture en couches présentée au chapitre 6.</p>
+<h2 id="14-les-exemples">1.4. <span style="color: #2e74b5">Les exemples</span></h2>
+<p>Les codes du document sont rangés dans un unique dossier <em>[java-oct-2026]</em>, avec un sous-dossier par chapitre :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nx">java</span><span class="o">-</span><span class="nx">oct</span><span class="o">-</span><span class="mf">2026</span><span class="o">/</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="err">├──</span><span class="w"> </span><span class="mo">02</span><span class="o">-</span><span class="nx">installation</span><span class="o">/</span><span class="w">       </span><span class="nx">premier</span><span class="w"> </span><span class="nx">programme</span><span class="p">,</span><span class="w"> </span><span class="nx">premiers</span><span class="w"> </span><span class="nx">projets</span><span class="w"> </span><span class="nx">Maven</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="err">├──</span><span class="w"> </span><span class="mo">03</span><span class="o">-</span><span class="nx">bases</span><span class="o">/</span><span class="w">              </span><span class="nx">Bases01</span><span class="p">.</span><span class="nx">java</span><span class="w"> </span><span class="nx">à</span><span class="w"> </span><span class="nx">Bases31</span><span class="p">.</span><span class="nx">java</span><span class="p">,</span><span class="w"> </span><span class="nx">Impots1</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="err">├──</span><span class="w"> </span><span class="mo">04</span><span class="o">-</span><span class="nx">classes</span><span class="o">/</span><span class="w">            </span><span class="nx">Classes01</span><span class="p">.</span><span class="nx">java</span><span class="w"> </span><span class="nx">à</span><span class="w"> </span><span class="nx">Classes26</span><span class="p">.</span><span class="nx">java</span><span class="p">,</span><span class="w"> </span><span class="nx">programmes</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">plusieurs</span><span class="w"> </span><span class="nx">fichiers</span><span class="p">,</span><span class="w"> </span><span class="nx">ImpotsV2</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="err">├──</span><span class="w"> </span><span class="mo">05</span><span class="o">-</span><span class="nx">classes</span><span class="o">-</span><span class="nx">java</span><span class="o">/</span><span class="w">       </span><span class="nx">chaînes</span><span class="p">,</span><span class="w"> </span><span class="nx">tableaux</span><span class="p">,</span><span class="w"> </span><span class="nx">collections</span><span class="p">,</span><span class="w"> </span><span class="nx">API</span><span class="w"> </span><span class="nx">Stream</span><span class="p">,</span><span class="w"> </span><span class="nx">fichiers</span><span class="p">,</span><span class="w"> </span><span class="nb">JSON</span><span class="p">,</span><span class="w"> </span><span class="nx">regex</span><span class="p">,</span><span class="w"> </span><span class="nx">ImpotsV3</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="err">├──</span><span class="w"> </span><span class="mo">06</span><span class="o">-</span><span class="nx">architectures</span><span class="o">/</span><span class="w">      </span><span class="nx">TestsDemo</span><span class="p">,</span><span class="w"> </span><span class="nx">ImpotsV4</span><span class="p">,</span><span class="w"> </span><span class="nx">ImpotsV5</span><span class="w"> </span><span class="p">(</span><span class="nx">couches</span><span class="p">,</span><span class="w"> </span><span class="nx">tests</span><span class="p">,</span><span class="w"> </span><span class="nx">injection</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="nx">dépendances</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="err">├──</span><span class="w"> </span><span class="mo">07</span><span class="o">-</span><span class="nx">lambdas</span><span class="o">/</span><span class="w">            </span><span class="nx">Lambdas01</span><span class="p">.</span><span class="nx">java</span><span class="w"> </span><span class="nx">à</span><span class="w"> </span><span class="nx">Lambdas11</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="err">├──</span><span class="w"> </span><span class="mf">08</span><span class="o">-</span><span class="nx">threads</span><span class="o">/</span><span class="w">            </span><span class="nx">Threads01</span><span class="p">.</span><span class="nx">java</span><span class="w"> </span><span class="nx">à</span><span class="w"> </span><span class="nx">Threads31</span><span class="p">.</span><span class="nx">java</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="err">├──</span><span class="w"> </span><span class="mf">09</span><span class="o">-</span><span class="k">async</span><span class="err">/              Async01.java à Async26.java</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="err">├──</span><span class="w"> </span><span class="mf">10</span><span class="o">-</span><span class="nx">jdbc</span><span class="o">/</span><span class="w">               </span><span class="nx">scripts</span><span class="w"> </span><span class="nx">SQL</span><span class="p">,</span><span class="w"> </span><span class="nx">projet</span><span class="w"> </span><span class="nx">jdbc</span><span class="w"> </span><span class="p">(</span><span class="nx">Jdbc01</span><span class="w"> </span><span class="nx">à</span><span class="w"> </span><span class="nx">Jdbc10</span><span class="p">),</span><span class="w"> </span><span class="nx">ImpotsV6</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="err">├──</span><span class="w"> </span><span class="mf">11</span><span class="o">-</span><span class="nx">hibernate</span><span class="o">/</span><span class="w">          </span><span class="nx">projets</span><span class="w"> </span><span class="nx">Hibernate</span><span class="p">,</span><span class="w"> </span><span class="nx">ImpotsV7</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="err">├──</span><span class="w"> </span><span class="mf">12</span><span class="o">-</span><span class="nx">internet</span><span class="o">/</span><span class="w">           </span><span class="nx">Internet01</span><span class="p">.</span><span class="nx">java</span><span class="w"> </span><span class="nx">à</span><span class="w"> </span><span class="nx">Internet19</span><span class="p">,</span><span class="w"> </span><span class="nx">ImpotsV8</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="err">└──</span><span class="w"> </span><span class="mf">13</span><span class="o">-</span><span class="nx">services</span><span class="o">-</span><span class="nx">web</span><span class="o">/</span><span class="w">       </span><span class="nx">services</span><span class="w"> </span><span class="nx">web</span><span class="w"> </span><span class="nx">Spring</span><span class="w"> </span><span class="nx">Boot</span><span class="w"> </span><span class="nx">et</span><span class="w"> </span><span class="nx">leurs</span><span class="w"> </span><span class="nx">clients</span><span class="w"> </span><span class="p">(</span><span class="nx">WsImpot</span><span class="p">,</span><span class="w"> </span><span class="nx">ClientWsImpot</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">version</span><span class="w"> </span><span class="mf">9</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Les petits programmes sont des <strong>fichiers source compacts</strong> : un simple fichier <em>[.java]</em>, exécuté par la commande <strong><em>[java Fichier.java]</em></strong> (chapitre 2). Les programmes de plusieurs fichiers qui n&#x27;utilisent que les bibliothèques du JDK sont lancés de la même façon. Les programmes qui ont besoin d&#x27;une bibliothèque extérieure (Jackson, JUnit, Spring, le pilote MySQL, Hibernate, Spring Boot) sont des <strong>projets Maven</strong> (<em>[pom.xml]</em>).</p>
+<p>Tous les programmes du document ont été compilés sans erreur ni avertissement par le compilateur <em>[javac]</em> du JDK 25, avec l&#x27;option <strong><em>[-Xlint:all]</em></strong> qui active tous les avertissements, et exécutés avec les versions des bibliothèques indiquées en annexe. Les résultats reproduits dans le document sont ceux de ces exécutions. Ils ont été obtenus avec la langue et le pays français (fr-FR), comme sur un poste Windows français : les nombres réels formatés s&#x27;affichent avec une virgule décimale et les dates en français. Deux remarques :</p>
+<ul>
+<li>les messages d&#x27;erreur du JDK (messages des exceptions, messages du compilateur) sont en anglais : le JDK n&#x27;en fournit pas de traduction française ;</li>
+<li>les exemples ont été exécutés sous Linux. Pour l&#x27;essentiel, cela ne change rien : Java est multiplateforme. Les quelques différences (chemins de fichiers avec des / au lieu de \, commandes du terminal) sont signalées là où elles apparaissent.</li>
+</ul>
+<p>Les résultats des programmes multithreads, asynchrones ou réseau, ainsi que les durées mesurées, peuvent varier d&#x27;une exécution à l&#x27;autre : les commentaires portent sur ce qui est reproductible.</p>
+<h2 id="15-les-sources">1.5. <span style="color: #2e74b5">Les sources</span></h2>
+<p>Les sources principales de ce document sont :</p>
+<ul>
+<li>la documentation officielle de Java : le site <a href="https://dev.java/">https://dev.java</a> (tutoriels) et la documentation de l&#x27;API Java SE 25 : <a href="https://docs.oracle.com/en/java/javase/25/">https://docs.oracle.com/en/java/javase/25/</a> ;</li>
+<li>les propositions d&#x27;évolution de Java (JEP, « JDK Enhancement Proposals »), qui décrivent en détail chaque nouveauté du langage et de la plateforme : <a href="https://openjdk.org/jeps/0">https://openjdk.org/jeps/0</a> ;</li>
+<li>la documentation de chaque bibliothèque : JUnit (<a href="https://docs.junit.org/">https://docs.junit.org</a>), Spring (<a href="https://spring.io/projects">https://spring.io/projects</a>), Hibernate (<a href="https://hibernate.org/orm/documentation/">https://hibernate.org/orm/documentation/</a>), Jackson (<a href="https://github.com/FasterXML/jackson">https://github.com/FasterXML/jackson</a>) ;</li>
+<li>deux ouvrages de référence : « Effective Java » de Joshua Bloch (Addison-Wesley) et « Java Concurrency in Practice » de Brian Goetz et al. (Addison-Wesley), qui restent d&#x27;excellentes lectures.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Ce cours, rédigé par l’IA d’Anthropic <strong>Claude</strong> à la demande de <strong>Serge Tahé</strong>, est mis à la disposition du public selon les termes de la
+        <em>licence Creative Commons Attribution – Pas d’utilisation commerciale –
+        ShareAlike 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

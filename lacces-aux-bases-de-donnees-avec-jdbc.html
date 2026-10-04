@@ -1211,6 +1211,7 @@
 
 
 <h1 id="10-lacces-aux-bases-de-donnees-avec-jdbc">10. <span style="color: #2e74b5">L&#x27;accès aux bases de données avec JDBC</span></h1>
+<p><strong>Prérequis</strong> : la version 6 de l&#x27;application <em>[Impots]</em>, présentée à la fin de ce chapitre, réutilise les modules <em>[impots-dao]</em>, <em>[impots-metier]</em> et <em>[impots-ui]</em> de la version 5 (chapitre 6). Avant de construire ou d&#x27;ouvrir ses projets, il faut avoir installé la version 5 dans le dépôt Maven local par la commande <strong><em>[mvn install]</em></strong> tapée dans le dossier <em>[06-architectures/ImpotsV5]</em> (cf. chapitre 6, section sur <strong><em>[mvn install]</em></strong>).</p>
 <h2 id="101-le-pilote-jdbc">10.1. <span style="color: #2e74b5">Le pilote JDBC</span></h2>
 <p>Reprenons l&#x27;architecture en couches utilisée à diverses reprises depuis le chapitre 6. Jusqu&#x27;à présent, la couche <em>[dao]</em> de l&#x27;application <em>[Impots]</em> a exploité trois types de sources de données :</p>
 <ul>
@@ -2050,7 +2051,7 @@
 <ul>
 <li>lignes 8-10 : les coordonnées du projet ;</li>
 <li>lignes 13-14 : la version de Java et le codage des fichiers source, comme dans tous les projets du cours ;</li>
-<li>ligne 16 : la propriété <em>[exec.mainClass]</em> désigne la classe exécutée par <strong><em>[mvn exec:java]</em></strong> (ligne 59). Sa valeur par défaut est <em>[jdbc.Jdbc01]</em> ; on exécute un autre programme en redéfinissant la propriété sur la ligne de commande : <strong><em>[mvn -q compile exec:java -Dexec.mainClass=jdbc.Jdbc02]</em></strong> ;</li>
+<li>ligne 16 : la propriété <em>[exec.mainClass]</em> désigne la classe exécutée par <strong><em>[mvn exec:java]</em></strong> (ligne 59). Sa valeur par défaut est <em>[jdbc.Jdbc01]</em> ; on exécute un autre programme en redéfinissant la propriété sur la ligne de commande : <strong><em>[mvn -q compile exec:java</em></strong> <strong><em>-Dexec.mainClass=jdbc.Jdbc02]</em></strong> ;</li>
 <li>lignes 21-25 : le pilote JDBC de MySQL, <strong>MySQL Connector/J</strong>, de coordonnées <em>[com.mysql:mysql-connector-j]</em>. Jusqu&#x27;à sa version 8.0.30, il était publié sous les coordonnées <em>[mysql:mysql-connector-java]</em>, que l&#x27;on rencontre encore dans de nombreux projets ;</li>
 <li>lignes 27-31 : le pool de connexions HikariCP, que nous utiliserons à partir du programme <em>[Jdbc03]</em> ;</li>
 <li>lignes 33-37 : HikariCP écrit ses messages de journalisation au travers de l&#x27;API SLF4J (« Simple Logging Facade for Java »), qui a besoin d&#x27;une implémentation : nous utilisons Logback. Sans elle, SLF4J afficherait un avertissement au démarrage. Le fichier <em>[src/main/resources/logback.xml]</em>, présenté plus bas, n&#x27;affiche que les avertissements et les erreurs ;</li>

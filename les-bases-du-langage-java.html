@@ -1634,7 +1634,7 @@
 <p>Depuis Java 25, la méthode <em>[main]</em> peut avoir quatre formes : <strong><em>[static void main(String[] args)]</em></strong>, <strong><em>[static void main()]</em></strong>, <strong><em>[void main(String[] args)]</em></strong> et <strong><em>[void main()]</em></strong> ; si une classe en contient plusieurs, le lanceur préfère celle qui a le paramètre <em>[String[]]</em>. Les deux dernières formes sont des méthodes d&#x27;<strong>instance</strong> : le lanceur crée d&#x27;abord un objet de la classe, puis appelle sa méthode <em>[main]</em>. Le mot clé <em>[public]</em> n&#x27;est plus obligatoire.</p>
 <h3 id="323-limportation-automatique-du-module-javabase">3.2.3. <span style="color: #1f4d78">L&#x27;importation automatique du module java.base</span></h3>
 <p>Le programme <em>[Bases01.java]</em> utilise la classe <em>[List]</em> sans directive <strong><em>[import java.util.List;]</em></strong>. C&#x27;est possible parce que le compilateur ajoute automatiquement à tout fichier compact la directive suivante (Java 25) :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">module</span> <span class="n">java</span><span class="o">.</span><span class="n">base</span><span class="p">;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import module</span><span class="w"> </span><span class="nn">java.base</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>Les classes de la bibliothèque standard de Java sont rangées dans des paquetages, eux-mêmes regroupés en <strong>modules</strong>. Le module <em>[java.base]</em> est le module fondamental : il contient les paquetages les plus utilisés. La directive <strong><em>[import module java.base;]</em></strong> importe d&#x27;un coup toutes les classes publiques de tous les paquetages exportés par ce module, ce qui revient, entre autres, aux directives suivantes :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
@@ -1648,18 +1648,18 @@
 <span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-7-10">10</a></span>
 <span class="normal"><a href="#__codelineno-7-11">11</a></span>
-<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.math.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.net.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.text.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.regex.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.stream.</span><span class="o">*</span><span class="p">;</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="o">...</span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.*</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.math.*</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.net.*</span><span class="p">;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.nio.file.*</span><span class="p">;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.text.*</span><span class="p">;</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.*</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.time.format.*</span><span class="p">;</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.*</span><span class="p">;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.function.*</span><span class="p">;</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.regex.*</span><span class="p">;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.stream.*</span><span class="p">;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="p">...</span>
 </code></pre></div></td></tr></table></div>
 <p>Dans un fichier compact, on dispose donc sans rien écrire des listes et des dictionnaires (<em>[java.util]</em>), des fichiers (<em>[java.io]</em>, <em>[java.nio.file]</em>), des grands nombres (<em>[java.math]</em>), des dates (<em>[java.time]</em>), etc. Une classe d&#x27;un autre module, comme les classes JDBC du module <em>[java.sql]</em>, doit toujours être importée explicitement. Dans une classe ordinaire, rien n&#x27;est importé d&#x27;office en dehors du paquetage <em>[java.lang]</em> : on écrit une directive par classe (<strong><em>[import java.util.Arrays;]</em></strong>), une directive par paquetage (<strong><em>[import java.util.*;]</em></strong>) ou, depuis Java 25, une directive par module (<strong><em>[import module java.base;]</em></strong>). La classe <em>[IO]</em> fait partie du paquetage <em>[java.lang]</em> : elle est utilisable partout.</p>
 <h2 id="33-les-donnees-de-java">3.3. <span style="color: #2e74b5">Les données de Java</span></h2>
@@ -1681,7 +1681,7 @@
 <li>une variable de type référence contient l&#x27;adresse de l&#x27;objet (sa <strong>référence</strong>), l&#x27;objet lui-même étant rangé ailleurs en mémoire.</li>
 </ul>
 <p>Une valeur de type primitif n&#x27;est pas un objet : elle n&#x27;a ni champs ni méthodes. À chaque type primitif correspond cependant une <strong>classe enveloppe</strong> (« wrapper class ») du paquetage <em>[java.lang]</em> : <em>[Integer]</em> pour <em>[int]</em>, <em>[Double]</em> pour <em>[double]</em>, <em>[Character]</em> pour <em>[char]</em>, etc. Un objet <em>[Integer]</em> enveloppe une valeur <em>[int]</em>. Ces classes offrent aussi des constantes et des méthodes utiles : <em>[Integer.MAX_VALUE]</em>, <em>[Integer.BYTES]</em>, <em>[Integer.parseInt]</em>... Depuis Java 5, le compilateur passe automatiquement d&#x27;un type primitif à sa classe enveloppe (<strong>emballage</strong>, en anglais « boxing ») et inversement (<strong>déballage</strong>, « unboxing »). Ainsi, on peut écrire :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>String nomDuType = Integer.valueOf(3).getClass().getName();
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">String</span><span class="w"> </span><span class="n">nomDuType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="na">getClass</span><span class="p">().</span><span class="na">getName</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <p>Le littéral 3 est de type <em>[int]</em>. Comme il n&#x27;a pas de méthodes, on ne peut pas écrire <strong><em>[3.getClass()]</em></strong> : il faut d&#x27;abord l&#x27;envelopper dans un objet <em>[Integer]</em> avec <strong><em>[Integer.valueOf(3)]</em></strong>. Tout objet a une méthode <em>[getClass()]</em> qui rend un objet décrivant sa classe ; la méthode <em>[getName()]</em> de cet objet donne le nom complet de la classe, ici <em>[java.lang.Integer]</em>.</p>
 <p>Java n&#x27;a pas d&#x27;entiers non signés, en dehors du type <em>[char]</em> (16 bits). Les classes enveloppes offrent en revanche des méthodes qui interprètent les bits d&#x27;un entier comme ceux d&#x27;un nombre non signé : <em>[Integer.toUnsignedString]</em>, <em>[Integer.parseUnsignedInt]</em>, <em>[Integer.compareUnsigned]</em>, <em>[Byte.toUnsignedInt]</em>... Il n&#x27;a pas non plus de type primitif décimal : les montants se calculent avec la classe <em>[BigDecimal]</em> du paquetage <em>[java.math]</em>, que nous présentons un peu plus loin.</p>
@@ -1978,10 +1978,10 @@
 <p>Un programme manipule des données caractérisées par un nom et un type. Ces données sont stockées en mémoire. Au moment de la traduction du programme, le compilateur affecte à chaque donnée un emplacement en mémoire caractérisé par une adresse et une taille. Il le fait en s&#x27;aidant des déclarations faites par le programmeur. Par ailleurs, celles-ci permettent au compilateur de détecter des erreurs de programmation. Ainsi l&#x27;opération <strong><em>[x = x * 2;]</em></strong> sera déclarée erronée si <em>[x]</em> est une chaîne de caractères.</p>
 <h4 id="3332-declaration-des-constantes">3.3.3.2. <span style="color: #2e74b5">Déclaration des constantes</span></h4>
 <p>En Java, une constante est une variable déclarée avec le mot clé <em>[final]</em> : elle ne peut recevoir une valeur qu&#x27;une seule fois. La syntaxe est la suivante :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>final type nom = valeur;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kd">final</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="n">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valeur</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>Une constante utilisée par tout le programme est déclarée en dehors des méthodes, comme un <strong>champ</strong> <em>[static final]</em> de la classe. Par exemple :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>static final double TAUX_TVA = 0.2;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">TAUX_TVA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>Pourquoi déclarer des constantes ?</p>
 <ul>
@@ -1996,7 +1996,7 @@
 </code></pre></div></td></tr></table></div>
 <p>où <em>[type]</em> est un type prédéfini ou un type défini par le programmeur. L&#x27;initialisation est facultative ; en revanche, Java refuse qu&#x27;on utilise la valeur d&#x27;une variable locale qui n&#x27;a pas encore reçu de valeur (message <strong><em>[variable x might not have been initialized]</em></strong>).</p>
 <p>Depuis Java 10, on peut aussi ne pas préciser le type d&#x27;une variable locale en utilisant le mot <em>[var]</em> à la place du type :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="kd">var</span><span class="w"> </span><span class="nx">variable1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valeur1</span><span class="p">;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="kd">var</span><span class="w"> </span><span class="n">variable1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">valeur1</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>Le mot <em>[var]</em> ne veut pas dire que la variable n&#x27;a pas de type précis : elle a le type de la valeur qui lui est affectée, déterminé par le compilateur. L&#x27;initialisation est ici obligatoire, afin que le compilateur puisse en déduire le type. <em>[var]</em> n&#x27;est utilisable que pour les variables locales (pas pour les champs ni pour les paramètres des méthodes). On l&#x27;utilise lorsque le type est évident à la lecture de la valeur, en particulier lorsque son nom est long.</p>
 <p>Le programme <em>[Bases05.java]</em> est le suivant :</p>
@@ -2076,14 +2076,14 @@
 <span class="normal"><a href="#__codelineno-18-5">5</a></span>
 <span class="normal"><a href="#__codelineno-18-6">6</a></span>
 <span class="normal"><a href="#__codelineno-18-7">7</a></span>
-<span class="normal"><a href="#__codelineno-18-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="o">&gt;</span><span class="w"> </span><span class="nx">java</span><span class="w"> </span><span class="nx">Bases05</span><span class="p">.</span><span class="nx">java</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="nx">Prix</span><span class="w"> </span><span class="nx">TTC</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mf">120.0</span><span class="w"> </span><span class="nx">euros</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="nx">Type</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="kr">int</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">2</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">Integer</span><span class="p">,</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Integer</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="nx">Type</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">j</span><span class="o">=</span><span class="mf">3</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">Integer</span><span class="p">,</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Integer</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="nx">Type</span><span class="w"> </span><span class="nx">de</span><span class="w"> </span><span class="kd">var</span><span class="w"> </span><span class="nx">aujourdhui</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">LocalDateTime</span><span class="p">,</span><span class="nx">java</span><span class="p">.</span><span class="nx">time</span><span class="p">.</span><span class="nx">LocalDateTime</span>
-<a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="nx">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">Double</span><span class="p">,</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Double</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">Float</span><span class="p">,</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Float</span>
-<a id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="nx">z</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">Long</span><span class="p">,</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nx">Long</span><span class="p">,</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nb">String</span>
-<a id="__codelineno-18-8" name="__codelineno-18-8"></a><span class="nx">a</span><span class="o">=</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">=</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">c</span><span class="o">=</span><span class="mf">3</span>
+<span class="normal"><a href="#__codelineno-18-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>&gt; java Bases05.java
+<a id="__codelineno-18-2" name="__codelineno-18-2"></a>Prix TTC : 120.0 euros
+<a id="__codelineno-18-3" name="__codelineno-18-3"></a>Type de int i=2 : Integer,java.lang.Integer
+<a id="__codelineno-18-4" name="__codelineno-18-4"></a>Type de var j=3 : Integer,java.lang.Integer
+<a id="__codelineno-18-5" name="__codelineno-18-5"></a>Type de var aujourdhui : LocalDateTime,java.time.LocalDateTime
+<a id="__codelineno-18-6" name="__codelineno-18-6"></a>x : Double,java.lang.Double, y : Float,java.lang.Float
+<a id="__codelineno-18-7" name="__codelineno-18-7"></a>z : Long,java.lang.Long, nom : String,java.lang.String
+<a id="__codelineno-18-8" name="__codelineno-18-8"></a>a=1, b=4, c=3
 </code></pre></div></td></tr></table></div>
 <p>Commentaires :</p>
 <ul>
@@ -2246,12 +2246,12 @@
 <span class="normal"><a href="#__codelineno-23-3">3</a></span>
 <span class="normal"><a href="#__codelineno-23-4">4</a></span>
 <span class="normal"><a href="#__codelineno-23-5">5</a></span>
-<span class="normal"><a href="#__codelineno-23-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>try {
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a>    appel de la méthode susceptible de générer l'exception
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a>} catch (NumberFormatException e) {
-<a id="__codelineno-23-4" name="__codelineno-23-4"></a>    traiter l'exception e
-<a id="__codelineno-23-5" name="__codelineno-23-5"></a>}
-<a id="__codelineno-23-6" name="__codelineno-23-6"></a>instruction suivante
+<span class="normal"><a href="#__codelineno-23-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">    </span><span class="n">appel</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">méthode</span><span class="w"> </span><span class="n">susceptible</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">générer</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">exception</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="n">traiter</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">exception</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="p">}</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="n">instruction</span><span class="w"> </span><span class="n">suivante</span>
 </code></pre></div></td></tr></table></div>
 <p>Si la méthode ne génère pas d&#x27;exception, on passe à l&#x27;instruction suivante ; sinon, on passe dans le corps de la clause <em>[catch]</em>, puis à l&#x27;instruction suivante. Nous reviendrons sur la gestion des exceptions dans la section qui lui est consacrée.</p>
 <p>Les méthodes <em>[parseInt]</em>, <em>[parseDouble]</em>... acceptent un signe + ou - en tête, mais ni espaces ni séparateur des milliers : on retire les espaces de début et de fin d&#x27;une saisie avec la méthode <em>[trim()]</em> de la classe <em>[String]</em> avant de la convertir. La bibliothèque Java n&#x27;a pas de méthode qui tenterait une conversion et rendrait un indicateur de réussite au lieu de lancer une exception ; il est facile d&#x27;en écrire une, qui rend un <em>[OptionalInt]</em> vide en cas d&#x27;échec : c&#x27;est ce que fait la méthode <em>[essayerParseInt]</em> du programme suivant.</p>
@@ -2515,23 +2515,23 @@
 <p>Retenons que les méthodes <em>[parseXXX]</em> et <em>[toString]</em> ignorent la langue de l&#x27;utilisateur (point décimal), alors que les formats et la classe <em>[NumberFormat]</em> la respectent. Un programme qui lit des nombres doit toujours savoir selon quelles conventions ils ont été écrits.</p>
 <h3 id="336-les-tableaux-de-donnees">3.3.6. <span style="color: #1f4d78">Les tableaux de données</span></h3>
 <p>Un tableau Java est un objet permettant de rassembler sous un même identificateur des données de même type. Sa déclaration est la suivante :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a>Type[] tableau = new Type[n];
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="n">Type</span><span class="o">[]</span><span class="w"> </span><span class="n">tableau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Type</span><span class="o">[</span><span class="n">n</span><span class="o">]</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p><em>[n]</em> est le nombre de données que peut contenir le tableau. La syntaxe <em>[tableau[i]]</em> désigne la donnée n° i, où i appartient à l&#x27;intervalle [0, n-1]. Toute référence à la donnée <em>[tableau[i]]</em> où i n&#x27;appartient pas à l&#x27;intervalle [0, n-1] provoque une exception <em>[ArrayIndexOutOfBoundsException]</em>. À sa création, chaque élément du tableau reçoit la valeur par défaut de son type : 0 pour les nombres, <em>[false]</em> pour les booléens, <em>[null]</em> pour les types référence. Un tableau peut être initialisé en même temps que déclaré :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a>    int[] entiers = new int[]{0, 10, 20, 30};
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">entiers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 <p>ou plus simplement, dans une déclaration :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a>    int[] valeurs = {0, 10, 20, 30, 40};
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="w">    </span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">valeurs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">40</span><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 <p>Les tableaux ont un champ <em>[length]</em> (sans parenthèses) qui est leur nombre d&#x27;éléments. Un tableau ne peut pas changer de taille après sa création : pour une collection qui grandit, on utilise une liste (chapitre 5). On rencontre aussi la notation <strong><em>[int entiers[]]</em></strong>, héritée du langage C : elle est acceptée mais déconseillée.</p>
 <p>Java n&#x27;a pas de véritable tableau à deux dimensions : un tableau à deux indices est un <strong>tableau de tableaux</strong>. La déclaration</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a>Type[][] tableau = new Type[n][m];
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="n">Type</span><span class="o">[][]</span><span class="w"> </span><span class="n">tableau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Type</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">m</span><span class="o">]</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>crée un tableau de <em>[n]</em> éléments, chacun étant une référence sur un tableau de <em>[m]</em> éléments : <em>[n]</em> lignes et <em>[m]</em> colonnes. La syntaxe <em>[tableau[i][j]]</em> désigne l&#x27;élément j de la ligne i. <em>[tableau.length]</em> est le nombre de lignes, <em>[tableau[i].length]</em> le nombre d&#x27;éléments de la ligne i. Le tableau peut lui aussi être initialisé en même temps qu&#x27;il est déclaré :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a>    double[][] reels = {{0.5, 1.7}, {8.4, -6}};
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="w">    </span><span class="kt">double</span><span class="o">[][]</span><span class="w"> </span><span class="n">reels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">1.7</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mf">8.4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">6</span><span class="p">}};</span>
 </code></pre></div></td></tr></table></div>
 <p>Puisque chaque ligne est un tableau indépendant, les lignes peuvent avoir des longueurs différentes (on parle de tableau <strong>en escalier</strong>). La déclaration</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a>Type[][] tableau = new Type[n][];
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="n">Type</span><span class="o">[][]</span><span class="w"> </span><span class="n">tableau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Type</span><span class="o">[</span><span class="n">n</span><span class="o">][]</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>crée un tableau de n éléments dont chacun est une référence de tableau à une dimension. Ces références ne sont pas initialisées par la déclaration ci-dessus : elles ont la valeur <em>[null]</em>.</p>
 <p>Java n&#x27;offre pas d&#x27;indice compté depuis la fin du tableau ni de notation pour extraire une plage d&#x27;éléments. Le dernier élément s&#x27;écrit <em>[tableau[tableau.length - 1]]</em>, et la méthode <strong><em>[Arrays.copyOfRange(tableau, debut, fin)]</em></strong> rend un nouveau tableau formé des éléments d&#x27;indices <em>[debut]</em> (inclus) à <em>[fin]</em> (exclu). La classe <em>[java.util.Arrays]</em> offre de nombreuses autres méthodes utilitaires : <em>[toString]</em>, <em>[deepToString]</em>, <em>[sort]</em>, <em>[fill]</em>, <em>[equals]</em>, <em>[copyOf]</em>... Les listes, plus souples, ont depuis Java 21 des méthodes <em>[getFirst()]</em> et <em>[getLast()]</em>.</p>
@@ -2749,13 +2749,13 @@
 <h3 id="342-lecture-de-donnees-tapees-au-clavier">3.4.2. <span style="color: #1f4d78">Lecture de données tapées au clavier</span></h3>
 <p>Le flux de données provenant du clavier est désigné par le champ <em>[System.in]</em>, de type <em>[InputStream]</em>. C&#x27;est un flux d&#x27;octets, peu commode à utiliser directement. Pendant longtemps, pour lire une ligne de texte, il a fallu l&#x27;envelopper dans d&#x27;autres objets :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span>
-<span class="normal"><a href="#__codelineno-35-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a>BufferedReader clavier = new BufferedReader(new InputStreamReader(System.in));
-<a id="__codelineno-35-2" name="__codelineno-35-2"></a>String ligne = clavier.readLine();
+<span class="normal"><a href="#__codelineno-35-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="n">BufferedReader</span><span class="w"> </span><span class="n">clavier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">InputStreamReader</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">));</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="n">String</span><span class="w"> </span><span class="n">ligne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clavier</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
 </code></pre></div></td></tr></table></div>
 <p>ou utiliser la classe <em>[Scanner]</em> (Java 5). Depuis Java 25, la classe <em>[IO]</em> offre une méthode <em>[readln]</em> beaucoup plus simple, sous deux formes :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1">1</a></span>
-<span class="normal"><a href="#__codelineno-36-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a>String ligne = IO.readln();
-<a id="__codelineno-36-2" name="__codelineno-36-2"></a>String ligne = IO.readln("invite : ");
+<span class="normal"><a href="#__codelineno-36-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="n">String</span><span class="w"> </span><span class="n">ligne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">();</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="n">String</span><span class="w"> </span><span class="n">ligne</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IO</span><span class="p">.</span><span class="na">readln</span><span class="p">(</span><span class="s">"invite : "</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>La ligne tapée au clavier, sans la marque de fin de ligne, est rangée dans la variable <em>[ligne]</em> et peut ensuite être exploitée par le programme. La seconde forme affiche d&#x27;abord une invite, sans passer à la ligne. Comme nous l&#x27;avons vu, <em>[readln]</em> rend <em>[null]</em> lorsque le flux d&#x27;entrée est épuisé. Le flux <em>[System.in]</em> peut être redirigé vers un fichier, comme les flux <em>[out]</em> et <em>[err]</em>. Signalons enfin la classe <em>[Console]</em>, obtenue par <strong><em>[System.console()]</em></strong>, dont la méthode <em>[readPassword]</em> lit un mot de passe sans l&#x27;afficher.</p>
 <h3 id="343-exemple-dentrees-sorties">3.4.3. <span style="color: #1f4d78">Exemple d&#x27;entrées-sorties</span></h3>
@@ -2900,7 +2900,7 @@
 <a id="__codelineno-41-4" name="__codelineno-41-4"></a>type out.txt
 <a id="__codelineno-41-5" name="__codelineno-41-5"></a>type err.txt
 <a id="__codelineno-41-6" name="__codelineno-41-6"></a>
-<a id="__codelineno-41-7" name="__codelineno-41-7"></a><span class="gh"># PowerShell</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7"></a># PowerShell
 <a id="__codelineno-41-8" name="__codelineno-41-8"></a>"test" &gt; in.txt
 <a id="__codelineno-41-9" name="__codelineno-41-9"></a>Get-Content in.txt | java Bases10.java &gt; out.txt 2&gt; err.txt
 <a id="__codelineno-41-10" name="__codelineno-41-10"></a>Get-Content out.txt
@@ -2930,8 +2930,8 @@
 
 <p>Toutes ces fonctions sont des méthodes statiques d&#x27;une classe Java appelée <em>[Math]</em> (paquetage <em>[java.lang]</em>). Lorsqu&#x27;on les utilise, il faut les préfixer avec le nom de la classe où elles sont définies. Ainsi on écrira :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-42-1">1</a></span>
-<span class="normal"><a href="#__codelineno-42-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a>    double x, y = 4;
-<a id="__codelineno-42-2" name="__codelineno-42-2"></a>    x = Math.sqrt(y);
+<span class="normal"><a href="#__codelineno-42-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2"></a><span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">sqrt</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>La description complète de la classe <em>[Math]</em> se trouve dans la documentation en ligne de Java, <a href="https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Math.html">docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Math.html</a>.</p>
 <p>Les réels <em>[double]</em> sont codés en binaire : la plupart des nombres décimaux, comme 0,1, n&#x27;y ont qu&#x27;une valeur approchée. C&#x27;est sans importance pour un calcul scientifique, mais inacceptable pour des montants. La classe <em>[BigDecimal]</em> (paquetage <em>[java.math]</em>) représente au contraire un nombre décimal de façon exacte, avec autant de chiffres que nécessaire. Java ne permettant pas de redéfinir les opérateurs, les calculs se font avec des méthodes : <em>[add]</em>, <em>[subtract]</em>, <em>[multiply]</em>, <em>[divide]</em>, <em>[compareTo]</em>... Un <em>[BigDecimal]</em> est <strong>immuable</strong> : une opération ne modifie pas l&#x27;objet sur lequel elle s&#x27;applique, elle rend un nouvel objet.</p>
@@ -3130,8 +3130,8 @@
 </ul>
 <p>Le résultat d&#x27;une expression relationnelle est le booléen <em>[false]</em> si l&#x27;expression est fausse, <em>[true]</em> sinon.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1">1</a></span>
-<span class="normal"><a href="#__codelineno-46-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a>    int x = 5;
-<a id="__codelineno-46-2" name="__codelineno-46-2"></a>    boolean fin = x &gt; 4;
+<span class="normal"><a href="#__codelineno-46-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">fin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Comparaison de deux caractères</strong></p>
 <p>Soient deux caractères C1 et C2. Il est possible de les comparer avec les opérateurs &lt;, &lt;=, ==, !=, &gt;, &gt;=. On compare alors leurs codes Unicode, qui sont des nombres. Selon l&#x27;ordre Unicode, on a les relations suivantes :</p>
@@ -3281,8 +3281,8 @@
 <li>||.</li>
 </ul>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-51-1">1</a></span>
-<span class="normal"><a href="#__codelineno-51-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a>    double x = 3.5;
-<a id="__codelineno-51-2" name="__codelineno-51-2"></a>    boolean valide = x &gt; 2 &amp;&amp; x &lt; 4;
+<span class="normal"><a href="#__codelineno-51-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.5</span><span class="p">;</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2"></a><span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">valide</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>Les opérateurs relationnels ont priorité sur les opérateurs &amp;&amp; et ||. Ces deux opérateurs n&#x27;évaluent leur opérande droit que si c&#x27;est nécessaire : dans <strong><em>[a &amp;&amp; b]</em></strong>, b n&#x27;est pas évalué si a est faux ; dans <strong><em>[a || b]</em></strong>, b n&#x27;est pas évalué si a est vrai. On dit qu&#x27;ils sont « court-circuités ». On peut ainsi écrire sans risque <strong><em>[texte != null &amp;&amp; texte.length() &gt; 0]</em></strong>. Les opérateurs &amp; et |, appliqués à deux booléens, font le même calcul mais évaluent toujours leurs deux opérandes.</p>
 <h4 id="3456-traitement-de-bits">3.4.5.6. <span style="color: #2e74b5">Traitement de bits</span></h4>
@@ -3679,7 +3679,7 @@
 <h2 id="35-les-instructions-de-controle-du-deroulement-du-programme">3.5. <span style="color: #2e74b5">Les instructions de contrôle du déroulement du programme</span></h2>
 <h3 id="351-arret">3.5.1. <span style="color: #1f4d78">Arrêt</span></h3>
 <p>La méthode <em>[exit]</em> de la classe <em>[System]</em> permet d&#x27;arrêter l&#x27;exécution d&#x27;un programme :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a>System.exit(int status);
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1"></a><span class="n">System</span><span class="p">.</span><span class="na">exit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">status</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><em>[exit]</em> provoque la fin du processus en cours et rend la main au processus appelant, en général l&#x27;interpréteur de commandes. La valeur de <em>[status]</em>, appelée <strong>code de retour</strong>, peut être utilisée par celui-ci. Par convention, 0 signifie que le programme s&#x27;est bien déroulé et une autre valeur signale une erreur. Sous Windows, le code de retour est disponible dans la variable <em>[%ERRORLEVEL%]</em> de l&#x27;invite de commandes et dans la variable <em>[$LASTEXITCODE]</em> de PowerShell ; sous Linux et macOS, dans la variable <em>[$?]</em> du shell. Ainsi <strong><em>[System.exit(0);]</em></strong> arrêtera l&#x27;exécution du programme avec un code de retour égal à 0.</p>
 <p>Sans appel à <em>[System.exit]</em>, un programme se termine avec le code de retour 0 lorsque sa méthode <em>[main]</em> se termine, éventuellement par une instruction <em>[return]</em>. S&#x27;il est arrêté par une exception que personne n&#x27;a interceptée, il affiche cette exception et se termine avec le code de retour 1. En Java, la méthode <em>[main]</em> ne peut pas rendre d&#x27;entier : <em>[System.exit]</em> est le seul moyen de choisir le code de retour.</p>
@@ -3753,11 +3753,11 @@
 <span class="normal"><a href="#__codelineno-62-2">2</a></span>
 <span class="normal"><a href="#__codelineno-62-3">3</a></span>
 <span class="normal"><a href="#__codelineno-62-4">4</a></span>
-<span class="normal"><a href="#__codelineno-62-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a><span class="k">if</span><span class="w"> </span><span class="o">(</span>condition<span class="o">)</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-62-2" name="__codelineno-62-2"></a><span class="w">    </span>actions_condition_vraie<span class="p">;</span>
-<a id="__codelineno-62-3" name="__codelineno-62-3"></a><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-62-4" name="__codelineno-62-4"></a><span class="w">    </span>actions_condition_fausse<span class="p">;</span>
-<a id="__codelineno-62-5" name="__codelineno-62-5"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-62-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-62-2" name="__codelineno-62-2"></a><span class="w">    </span><span class="n">actions_condition_vraie</span><span class="p">;</span>
+<a id="__codelineno-62-3" name="__codelineno-62-3"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-62-4" name="__codelineno-62-4"></a><span class="w">    </span><span class="n">actions_condition_fausse</span><span class="p">;</span>
+<a id="__codelineno-62-5" name="__codelineno-62-5"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Notes :</p>
 <ul>
@@ -3778,7 +3778,7 @@
 <a id="__codelineno-63-4" name="__codelineno-63-4"></a>finsi
 </code></pre></div></td></tr></table></div>
 <p>Exemple :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-64-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><span class="k">if</span><span class="w"> </span><span class="o">(</span>x<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nv">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>nx<span class="w"> </span>+<span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="nv">sx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>sx<span class="w"> </span>+<span class="w"> </span>x<span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nv">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>dx<span class="w"> </span>-<span class="w"> </span>x<span class="p">;</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-64-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">nx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">sx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dx</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>On peut imbriquer les structures de choix. Se pose alors parfois le problème illustré par le programme <em>[Bases17.java]</em> :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-65-1"> 1</a></span>
@@ -3878,17 +3878,17 @@
 <span class="normal"><a href="#__codelineno-67-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-67-10">10</a></span>
 <span class="normal"><a href="#__codelineno-67-11">11</a></span>
-<span class="normal"><a href="#__codelineno-67-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1"></a><span class="n">switch</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-67-2" name="__codelineno-67-2"></a>    <span class="k">case</span> <span class="n">v1</span><span class="p">:</span>
-<a id="__codelineno-67-3" name="__codelineno-67-3"></a>        <span class="n">actions1</span><span class="p">;</span>
-<a id="__codelineno-67-4" name="__codelineno-67-4"></a>        <span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-67-5" name="__codelineno-67-5"></a>    <span class="k">case</span> <span class="n">v2</span><span class="p">:</span>
-<a id="__codelineno-67-6" name="__codelineno-67-6"></a>        <span class="n">actions2</span><span class="p">;</span>
-<a id="__codelineno-67-7" name="__codelineno-67-7"></a>        <span class="k">break</span><span class="p">;</span>
-<a id="__codelineno-67-8" name="__codelineno-67-8"></a>    <span class="o">...</span>
-<a id="__codelineno-67-9" name="__codelineno-67-9"></a>    <span class="n">default</span><span class="p">:</span>
-<a id="__codelineno-67-10" name="__codelineno-67-10"></a>        <span class="n">actions_sinon</span><span class="p">;</span>
-<a id="__codelineno-67-11" name="__codelineno-67-11"></a>        <span class="k">break</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-67-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1"></a><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-67-2" name="__codelineno-67-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">v1</span><span class="p">:</span>
+<a id="__codelineno-67-3" name="__codelineno-67-3"></a><span class="w">        </span><span class="n">actions1</span><span class="p">;</span>
+<a id="__codelineno-67-4" name="__codelineno-67-4"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-67-5" name="__codelineno-67-5"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">v2</span><span class="p">:</span>
+<a id="__codelineno-67-6" name="__codelineno-67-6"></a><span class="w">        </span><span class="n">actions2</span><span class="p">;</span>
+<a id="__codelineno-67-7" name="__codelineno-67-7"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<a id="__codelineno-67-8" name="__codelineno-67-8"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-67-9" name="__codelineno-67-9"></a><span class="w">    </span><span class="k">default</span><span class="p">:</span>
+<a id="__codelineno-67-10" name="__codelineno-67-10"></a><span class="w">        </span><span class="n">actions_sinon</span><span class="p">;</span>
+<a id="__codelineno-67-11" name="__codelineno-67-11"></a><span class="w">        </span><span class="k">break</span><span class="p">;</span>
 <a id="__codelineno-67-12" name="__codelineno-67-12"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Notes :</p>
@@ -3928,11 +3928,11 @@
 <span class="normal"><a href="#__codelineno-69-3">3</a></span>
 <span class="normal"><a href="#__codelineno-69-4">4</a></span>
 <span class="normal"><a href="#__codelineno-69-5">5</a></span>
-<span class="normal"><a href="#__codelineno-69-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1"></a><span class="n">resultat</span> <span class="o">=</span> <span class="n">switch</span> <span class="p">(</span><span class="n">expression</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-69-2" name="__codelineno-69-2"></a>    <span class="k">case</span> <span class="n">v1</span> <span class="o">-&gt;</span> <span class="n">valeur1</span><span class="p">;</span>
-<a id="__codelineno-69-3" name="__codelineno-69-3"></a>    <span class="k">case</span> <span class="n">v2</span><span class="p">,</span> <span class="n">v3</span> <span class="o">-&gt;</span> <span class="n">valeur2</span><span class="p">;</span>
-<a id="__codelineno-69-4" name="__codelineno-69-4"></a>    <span class="o">...</span>
-<a id="__codelineno-69-5" name="__codelineno-69-5"></a>    <span class="n">default</span> <span class="o">-&gt;</span> <span class="n">valeur_sinon</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-69-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1"></a><span class="n">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">expression</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-69-2" name="__codelineno-69-2"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">v1</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">valeur1</span><span class="p">;</span>
+<a id="__codelineno-69-3" name="__codelineno-69-3"></a><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">v2</span><span class="p">,</span><span class="w"> </span><span class="n">v3</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">valeur2</span><span class="p">;</span>
+<a id="__codelineno-69-4" name="__codelineno-69-4"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-69-5" name="__codelineno-69-5"></a><span class="w">    </span><span class="k">default</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">valeur_sinon</span><span class="p">;</span>
 <a id="__codelineno-69-6" name="__codelineno-69-6"></a><span class="p">};</span>
 </code></pre></div></td></tr></table></div>
 <p>L&#x27;expression switch doit être <strong>exhaustive</strong> : elle doit prévoir une valeur pour toutes les valeurs possibles de l&#x27;expression de contrôle, ce qui impose en général une clause <em>[default]</em>. Lorsqu&#x27;une clause a besoin de plusieurs instructions, on écrit un bloc, qui rend sa valeur avec l&#x27;instruction <em>[yield]</em>.</p>
@@ -4181,9 +4181,9 @@
 <p>La syntaxe est la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-72-1">1</a></span>
 <span class="normal"><a href="#__codelineno-72-2">2</a></span>
-<span class="normal"><a href="#__codelineno-72-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1"></a><span class="k">for</span><span class="w"> </span><span class="o">(</span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>id<span class="p">;</span><span class="w"> </span>i<span class="w"> </span>&lt;<span class="o">=</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>i<span class="w"> </span>+<span class="w"> </span>ip<span class="o">)</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-72-2" name="__codelineno-72-2"></a><span class="w">    </span>actions<span class="p">;</span>
-<a id="__codelineno-72-3" name="__codelineno-72-3"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-72-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ip</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-72-2" name="__codelineno-72-2"></a><span class="w">    </span><span class="n">actions</span><span class="p">;</span>
+<a id="__codelineno-72-3" name="__codelineno-72-3"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Notes :</p>
 <ul>
@@ -4214,9 +4214,9 @@
 <p>La syntaxe est la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-75-1">1</a></span>
 <span class="normal"><a href="#__codelineno-75-2">2</a></span>
-<span class="normal"><a href="#__codelineno-75-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1"></a><span class="k">for</span><span class="w"> </span><span class="o">(</span>Type<span class="w"> </span>variable<span class="w"> </span>:<span class="w"> </span>collection<span class="o">)</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-75-2" name="__codelineno-75-2"></a><span class="w">    </span>instructions<span class="p">;</span>
-<a id="__codelineno-75-3" name="__codelineno-75-3"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-75-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">variable</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">collection</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-75-2" name="__codelineno-75-2"></a><span class="w">    </span><span class="n">instructions</span><span class="p">;</span>
+<a id="__codelineno-75-3" name="__codelineno-75-3"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Notes :</p>
 <ul>
@@ -4228,9 +4228,9 @@
 <p><strong>Structure tantque (while)</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-76-1">1</a></span>
 <span class="normal"><a href="#__codelineno-76-2">2</a></span>
-<span class="normal"><a href="#__codelineno-76-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1"></a>while (condition) {
-<a id="__codelineno-76-2" name="__codelineno-76-2"></a>    actions;
-<a id="__codelineno-76-3" name="__codelineno-76-3"></a>}
+<span class="normal"><a href="#__codelineno-76-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-76-2" name="__codelineno-76-2"></a><span class="w">    </span><span class="n">actions</span><span class="p">;</span>
+<a id="__codelineno-76-3" name="__codelineno-76-3"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>On boucle tant que la condition est vérifiée. La boucle peut ne jamais être exécutée. Les notes sont les mêmes que pour le <em>[for]</em>. La structure algorithmique correspondante est la structure tantque :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-77-1">1</a></span>
@@ -4243,9 +4243,9 @@
 <p>La syntaxe est la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-78-1">1</a></span>
 <span class="normal"><a href="#__codelineno-78-2">2</a></span>
-<span class="normal"><a href="#__codelineno-78-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1"></a><span class="k">do</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-78-2" name="__codelineno-78-2"></a><span class="w">    </span>instructions<span class="p">;</span>
-<a id="__codelineno-78-3" name="__codelineno-78-3"></a><span class="o">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="o">(</span>condition<span class="o">)</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-78-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-78-1" name="__codelineno-78-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-78-2" name="__codelineno-78-2"></a><span class="w">    </span><span class="n">instructions</span><span class="p">;</span>
+<a id="__codelineno-78-3" name="__codelineno-78-3"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>On boucle jusqu&#x27;à ce que la condition devienne fausse. Ici, la boucle est faite au moins une fois. La structure algorithmique correspondante est la structure répéter ... jusqu&#x27;à :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-79-1">1</a></span>
@@ -4258,9 +4258,9 @@
 <p>La syntaxe est la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-80-1">1</a></span>
 <span class="normal"><a href="#__codelineno-80-2">2</a></span>
-<span class="normal"><a href="#__codelineno-80-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1"></a><span class="k">for</span><span class="w"> </span><span class="o">(</span>instructions_depart<span class="p">;</span><span class="w"> </span>condition<span class="p">;</span><span class="w"> </span>instructions_fin_boucle<span class="o">)</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-80-2" name="__codelineno-80-2"></a><span class="w">    </span>instructions<span class="p">;</span>
-<a id="__codelineno-80-3" name="__codelineno-80-3"></a><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-80-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-80-1" name="__codelineno-80-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">instructions_depart</span><span class="p">;</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span><span class="w"> </span><span class="n">instructions_fin_boucle</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-80-2" name="__codelineno-80-2"></a><span class="w">    </span><span class="n">instructions</span><span class="p">;</span>
+<a id="__codelineno-80-3" name="__codelineno-80-3"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>On boucle tant que la condition est vraie (évaluée avant chaque tour de boucle). Les <em>[instructions_depart]</em> sont effectuées avant d&#x27;entrer dans la boucle pour la première fois. Les <em>[instructions_fin_boucle]</em> sont exécutées après chaque tour de boucle. Les différentes instructions de <em>[instructions_depart]</em> et de <em>[instructions_fin_boucle]</em> sont séparées par des virgules. La structure algorithmique correspondante est la suivante :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-81-1">1</a></span>
@@ -4445,19 +4445,19 @@
 <span class="normal"><a href="#__codelineno-83-10">10</a></span>
 <span class="normal"><a href="#__codelineno-83-11">11</a></span>
 <span class="normal"><a href="#__codelineno-83-12">12</a></span>
-<span class="normal"><a href="#__codelineno-83-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1"></a>&gt;<span class="w"> </span>java<span class="w"> </span>Bases19.java
-<a id="__codelineno-83-2" name="__codelineno-83-2"></a><span class="k">for</span><span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span><span class="w"> </span>:<span class="w"> </span><span class="nv">somme</span><span class="o">=</span><span class="m">55</span>
-<a id="__codelineno-83-3" name="__codelineno-83-3"></a><span class="k">for</span><span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span><span class="w"> </span>:<span class="w"> </span><span class="nv">somme</span><span class="o">=</span><span class="m">55</span>
-<a id="__codelineno-83-4" name="__codelineno-83-4"></a><span class="k">while</span><span class="w"> </span>:<span class="w"> </span><span class="nv">somme</span><span class="o">=</span><span class="m">55</span>
-<a id="__codelineno-83-5" name="__codelineno-83-5"></a><span class="k">do</span><span class="w"> </span><span class="k">while</span><span class="w"> </span>:<span class="w"> </span><span class="nv">somme</span><span class="o">=</span><span class="m">55</span>
-<a id="__codelineno-83-6" name="__codelineno-83-6"></a><span class="m">5</span>!<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">120</span>
+<span class="normal"><a href="#__codelineno-83-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-83-1" name="__codelineno-83-1"></a>&gt; java Bases19.java
+<a id="__codelineno-83-2" name="__codelineno-83-2"></a>for (1) : somme=55
+<a id="__codelineno-83-3" name="__codelineno-83-3"></a>for (2) : somme=55
+<a id="__codelineno-83-4" name="__codelineno-83-4"></a>while : somme=55
+<a id="__codelineno-83-5" name="__codelineno-83-5"></a>do while : somme=55
+<a id="__codelineno-83-6" name="__codelineno-83-6"></a>5! = 120
 <a id="__codelineno-83-7" name="__codelineno-83-7"></a>paul
 <a id="__codelineno-83-8" name="__codelineno-83-8"></a>hélène
 <a id="__codelineno-83-9" name="__codelineno-83-9"></a>jacques
 <a id="__codelineno-83-10" name="__codelineno-83-10"></a>sylvie
-<a id="__codelineno-83-11" name="__codelineno-83-11"></a><span class="m">1</span><span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">7</span><span class="w"> </span>
-<a id="__codelineno-83-12" name="__codelineno-83-12"></a>premier<span class="w"> </span>multiple<span class="w"> </span>de<span class="w"> </span><span class="m">7</span><span class="w"> </span>supérieur<span class="w"> </span>à<span class="w"> </span><span class="m">50</span><span class="w"> </span>:<span class="w"> </span><span class="m">56</span>
-<a id="__codelineno-83-13" name="__codelineno-83-13"></a>premier<span class="w"> </span>négatif<span class="w"> </span>en<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">][</span><span class="m">1</span><span class="o">]</span>
+<a id="__codelineno-83-11" name="__codelineno-83-11"></a>1 3 5 7 
+<a id="__codelineno-83-12" name="__codelineno-83-12"></a>premier multiple de 7 supérieur à 50 : 56
+<a id="__codelineno-83-13" name="__codelineno-83-13"></a>premier négatif en [1][1]
 </code></pre></div></td></tr></table></div>
 <p>Commentaires :</p>
 <ul>
@@ -4480,12 +4480,12 @@
 <span class="normal"><a href="#__codelineno-84-3">3</a></span>
 <span class="normal"><a href="#__codelineno-84-4">4</a></span>
 <span class="normal"><a href="#__codelineno-84-5">5</a></span>
-<span class="normal"><a href="#__codelineno-84-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1"></a>try {
-<a id="__codelineno-84-2" name="__codelineno-84-2"></a>    code susceptible de générer une exception
-<a id="__codelineno-84-3" name="__codelineno-84-3"></a>} catch (Exception e) {
-<a id="__codelineno-84-4" name="__codelineno-84-4"></a>    traiter l'exception e
-<a id="__codelineno-84-5" name="__codelineno-84-5"></a>}
-<a id="__codelineno-84-6" name="__codelineno-84-6"></a>instruction suivante
+<span class="normal"><a href="#__codelineno-84-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-84-1" name="__codelineno-84-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-84-2" name="__codelineno-84-2"></a><span class="w">    </span><span class="n">code</span><span class="w"> </span><span class="n">susceptible</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">générer</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">exception</span>
+<a id="__codelineno-84-3" name="__codelineno-84-3"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-84-4" name="__codelineno-84-4"></a><span class="w">    </span><span class="n">traiter</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">exception</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-84-5" name="__codelineno-84-5"></a><span class="p">}</span>
+<a id="__codelineno-84-6" name="__codelineno-84-6"></a><span class="n">instruction</span><span class="w"> </span><span class="n">suivante</span>
 </code></pre></div></td></tr></table></div>
 <p>Si le code de la clause <em>[try]</em> ne génère pas d&#x27;exception, on passe à l&#x27;instruction suivante ; sinon, on passe dans le corps de la clause <em>[catch]</em>, puis à l&#x27;instruction suivante. Notons les points suivants :</p>
 <ul>
@@ -4498,14 +4498,14 @@
 <span class="normal"><a href="#__codelineno-85-5">5</a></span>
 <span class="normal"><a href="#__codelineno-85-6">6</a></span>
 <span class="normal"><a href="#__codelineno-85-7">7</a></span>
-<span class="normal"><a href="#__codelineno-85-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1"></a>try {
-<a id="__codelineno-85-2" name="__codelineno-85-2"></a>    code susceptible de générer les exceptions
-<a id="__codelineno-85-3" name="__codelineno-85-3"></a>} catch (ArrayIndexOutOfBoundsException e1) {
-<a id="__codelineno-85-4" name="__codelineno-85-4"></a>    traiter l'exception e1
-<a id="__codelineno-85-5" name="__codelineno-85-5"></a>} catch (NumberFormatException e2) {
-<a id="__codelineno-85-6" name="__codelineno-85-6"></a>    traiter l'exception e2
-<a id="__codelineno-85-7" name="__codelineno-85-7"></a>}
-<a id="__codelineno-85-8" name="__codelineno-85-8"></a>instruction suivante
+<span class="normal"><a href="#__codelineno-85-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-85-1" name="__codelineno-85-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-85-2" name="__codelineno-85-2"></a><span class="w">    </span><span class="n">code</span><span class="w"> </span><span class="n">susceptible</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">générer</span><span class="w"> </span><span class="n">les</span><span class="w"> </span><span class="n">exceptions</span>
+<a id="__codelineno-85-3" name="__codelineno-85-3"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ArrayIndexOutOfBoundsException</span><span class="w"> </span><span class="n">e1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-85-4" name="__codelineno-85-4"></a><span class="w">    </span><span class="n">traiter</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">exception</span><span class="w"> </span><span class="n">e1</span>
+<a id="__codelineno-85-5" name="__codelineno-85-5"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatException</span><span class="w"> </span><span class="n">e2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-85-6" name="__codelineno-85-6"></a><span class="w">    </span><span class="n">traiter</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">exception</span><span class="w"> </span><span class="n">e2</span>
+<a id="__codelineno-85-7" name="__codelineno-85-7"></a><span class="p">}</span>
+<a id="__codelineno-85-8" name="__codelineno-85-8"></a><span class="n">instruction</span><span class="w"> </span><span class="n">suivante</span>
 </code></pre></div></td></tr></table></div>
 <p>Les clauses <em>[catch]</em> sont examinées dans l&#x27;ordre ; la première dont le type correspond à l&#x27;exception est exécutée. Une clause qui gère un type d&#x27;exception doit donc précéder celle qui gère un type plus général : le compilateur refuse une clause qui ne pourrait jamais être atteinte ;</p>
 <ul>
@@ -4518,14 +4518,14 @@
 <span class="normal"><a href="#__codelineno-86-5">5</a></span>
 <span class="normal"><a href="#__codelineno-86-6">6</a></span>
 <span class="normal"><a href="#__codelineno-86-7">7</a></span>
-<span class="normal"><a href="#__codelineno-86-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1"></a>try {
-<a id="__codelineno-86-2" name="__codelineno-86-2"></a>    code susceptible de générer une exception
-<a id="__codelineno-86-3" name="__codelineno-86-3"></a>} catch (Exception e) {
-<a id="__codelineno-86-4" name="__codelineno-86-4"></a>    traiter l'exception e
-<a id="__codelineno-86-5" name="__codelineno-86-5"></a>} finally {
-<a id="__codelineno-86-6" name="__codelineno-86-6"></a>    code exécuté après try ou catch
-<a id="__codelineno-86-7" name="__codelineno-86-7"></a>}
-<a id="__codelineno-86-8" name="__codelineno-86-8"></a>instruction suivante
+<span class="normal"><a href="#__codelineno-86-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-86-1" name="__codelineno-86-1"></a><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-86-2" name="__codelineno-86-2"></a><span class="w">    </span><span class="n">code</span><span class="w"> </span><span class="n">susceptible</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">générer</span><span class="w"> </span><span class="n">une</span><span class="w"> </span><span class="n">exception</span>
+<a id="__codelineno-86-3" name="__codelineno-86-3"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-86-4" name="__codelineno-86-4"></a><span class="w">    </span><span class="n">traiter</span><span class="w"> </span><span class="n">l</span><span class="err">'</span><span class="n">exception</span><span class="w"> </span><span class="n">e</span>
+<a id="__codelineno-86-5" name="__codelineno-86-5"></a><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-86-6" name="__codelineno-86-6"></a><span class="w">    </span><span class="n">code</span><span class="w"> </span><span class="n">exécuté</span><span class="w"> </span><span class="n">après</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="n">ou</span><span class="w"> </span><span class="k">catch</span>
+<a id="__codelineno-86-7" name="__codelineno-86-7"></a><span class="p">}</span>
+<a id="__codelineno-86-8" name="__codelineno-86-8"></a><span class="n">instruction</span><span class="w"> </span><span class="n">suivante</span>
 </code></pre></div></td></tr></table></div>
 <p>Qu&#x27;il y ait exception ou pas, le code de la clause <em>[finally]</em> est toujours exécuté. On y plaçait autrefois la fermeture d&#x27;un fichier ; nous verrons qu&#x27;il existe aujourd&#x27;hui une forme plus simple, le <em>[try]</em> avec ressources ;</p>
 <ul>
@@ -4535,10 +4535,10 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-87-1">1</a></span>
 <span class="normal"><a href="#__codelineno-87-2">2</a></span>
 <span class="normal"><a href="#__codelineno-87-3">3</a></span>
-<span class="normal"><a href="#__codelineno-87-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1"></a>} catch (Exception ex) {
-<a id="__codelineno-87-2" name="__codelineno-87-2"></a>    System.err.println("L'erreur suivante s'est produite : " + ex.getMessage());
-<a id="__codelineno-87-3" name="__codelineno-87-3"></a>    ...
-<a id="__codelineno-87-4" name="__codelineno-87-4"></a>}
+<span class="normal"><a href="#__codelineno-87-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-87-1" name="__codelineno-87-1"></a><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-87-2" name="__codelineno-87-2"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">err</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"L'erreur suivante s'est produite : "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<a id="__codelineno-87-3" name="__codelineno-87-3"></a><span class="w">    </span><span class="p">...</span>
+<a id="__codelineno-87-4" name="__codelineno-87-4"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>la méthode <em>[toString()]</em> d&#x27;une exception rend le nom complet de sa classe suivi de son message ; sa méthode <em>[printStackTrace()]</em> affiche en plus la <strong>pile des appels</strong>, c&#x27;est-à-dire la liste des méthodes en cours d&#x27;exécution au moment de l&#x27;erreur, avec le nom du fichier source et le numéro de ligne. C&#x27;est l&#x27;information la plus utile pour le développeur, mais elle n&#x27;est pas destinée à l&#x27;utilisateur. Dans ce cours, nous afficherons le plus souvent le nom de la classe de l&#x27;exception, <strong><em>[ex.getClass().getName()]</em></strong> ou <strong><em>[ex.getClass().getSimpleName()]</em></strong>, et son message.</li>
@@ -4710,7 +4710,7 @@
 <p>Un nombre trop grand pour un <em>[int]</em>, comme 99999999999, provoque lui aussi une <em>[NumberFormatException]</em> : il est donc traité comme les autres saisies incorrectes (deuxième exécution).</p>
 <h3 id="364-plusieurs-clauses-catch-et-lancement-dexceptions">3.6.4. <span style="color: #1f4d78">Plusieurs clauses catch et lancement d&#x27;exceptions</span></h3>
 <p>Le programme peut lui-même lancer une exception avec l&#x27;instruction <em>[throw]</em> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-93-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1"></a>throw new IllegalArgumentException("message d'erreur");
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-93-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-93-1" name="__codelineno-93-1"></a><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">(</span><span class="s">"message d'erreur"</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>L&#x27;exécution de la méthode en cours s&#x27;arrête et l&#x27;exception remonte vers les méthodes appelantes jusqu&#x27;à ce qu&#x27;une clause <em>[catch]</em> la gère ; si aucune ne le fait, le programme s&#x27;arrête en affichant l&#x27;exception et la pile des appels. Dans une clause <em>[catch]</em>, l&#x27;instruction <strong><em>[throw e;]</em></strong> relance l&#x27;exception en cours, par exemple après l&#x27;avoir journalisée.</p>
 <p>Java n&#x27;a pas de filtre sur les clauses <em>[catch]</em> : pour ne traiter une exception que dans certains cas, on teste la condition dans la clause et l&#x27;on relance l&#x27;exception si nécessaire. Pour vérifier un paramètre qui ne doit pas valoir <em>[null]</em>, on utilise la méthode <strong><em>[Objects.requireNonNull(valeur, message)]</em></strong> : elle rend la valeur si elle n&#x27;est pas nulle, et lance sinon une <em>[NullPointerException]</em> avec le message indiqué.</p>
@@ -4845,7 +4845,7 @@
 <li>les autres classes dérivées d&#x27;<em>[Exception]</em> (<em>[IOException]</em>, <em>[InterruptedException]</em>, <em>[ParseException]</em>, <em>[SQLException]</em>...) signalent des incidents dus à l&#x27;environnement du programme (fichier absent, réseau coupé, base de données arrêtée) qu&#x27;un programme correct doit prévoir.</li>
 </ul>
 <p>Les exceptions de cette dernière catégorie sont dites <strong>contrôlées</strong> (« checked exceptions ») : le compilateur vérifie qu&#x27;une méthode qui peut en lancer une, directement ou en appelant une autre méthode, soit l&#x27;intercepte par une clause <em>[catch]</em>, soit la <strong>déclare</strong> dans sa signature avec le mot clé <em>[throws]</em> :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-97-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1"></a>String lireFichier(String nom) throws IOException { ... }
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-97-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-97-1" name="__codelineno-97-1"></a><span class="n">String</span><span class="w"> </span><span class="nf">lireFichier</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">nom</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>L&#x27;obligation est alors reportée sur les méthodes appelantes. Les exceptions dérivées de <em>[RuntimeException]</em> et d&#x27;<em>[Error]</em> sont dites <strong>non contrôlées</strong> (« unchecked ») : on peut les intercepter, mais le compilateur ne l&#x27;exige pas, et il est inutile de les déclarer. Beaucoup d&#x27;autres langages, comme C# ou Kotlin, n&#x27;ont que des exceptions non contrôlées.</p>
 <p>Le programme <em>[Bases23.java]</em> montre ces différents cas :</p>
@@ -5024,22 +5024,22 @@
 <span class="normal"><a href="#__codelineno-100-4">4</a></span>
 <span class="normal"><a href="#__codelineno-100-5">5</a></span>
 <span class="normal"><a href="#__codelineno-100-6">6</a></span>
-<span class="normal"><a href="#__codelineno-100-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1"></a><span class="x">Bases23.java:7: error: exception IOException is never thrown in body of corresponding try statement</span>
-<a id="__codelineno-100-2" name="__codelineno-100-2"></a><span class="x">    } catch (IOException e) {</span>
-<a id="__codelineno-100-3" name="__codelineno-100-3"></a><span class="x">      ^</span>
-<a id="__codelineno-100-4" name="__codelineno-100-4"></a><span class="x">Bases23.java:37: error: unreported exception IOException; must be caught or declared to be thrown</span>
-<a id="__codelineno-100-5" name="__codelineno-100-5"></a><span class="x">    return Files.readString(Path.of(nom));</span>
-<a id="__codelineno-100-6" name="__codelineno-100-6"></a><span class="x">                           ^</span>
-<a id="__codelineno-100-7" name="__codelineno-100-7"></a><span class="x">2 errors</span>
+<span class="normal"><a href="#__codelineno-100-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-100-1" name="__codelineno-100-1"></a>Bases23.java:7: error: exception IOException is never thrown in body of corresponding try statement
+<a id="__codelineno-100-2" name="__codelineno-100-2"></a>    } catch (IOException e) {
+<a id="__codelineno-100-3" name="__codelineno-100-3"></a>      ^
+<a id="__codelineno-100-4" name="__codelineno-100-4"></a>Bases23.java:37: error: unreported exception IOException; must be caught or declared to be thrown
+<a id="__codelineno-100-5" name="__codelineno-100-5"></a>    return Files.readString(Path.of(nom));
+<a id="__codelineno-100-6" name="__codelineno-100-6"></a>                           ^
+<a id="__codelineno-100-7" name="__codelineno-100-7"></a>2 errors
 </code></pre></div></td></tr></table></div>
 <p>La méthode <em>[main]</em> elle-même peut déclarer des exceptions : <strong><em>[void main() throws IOException]</em></strong>. Une exception non interceptée arrête alors le programme, qui affiche l&#x27;exception et la pile des appels et se termine avec le code de retour 1. C&#x27;est acceptable pour un petit programme d&#x27;essai, pas pour une application. Les exceptions contrôlées sont parfois jugées trop contraignantes, et beaucoup de bibliothèques récentes (Spring, Hibernate, que nous utiliserons plus tard) n&#x27;utilisent que des exceptions non contrôlées. Dans ce cours, nous interceptons une exception contrôlée là où l&#x27;on sait la traiter, et nous l&#x27;enveloppons dans une exception non contrôlée sinon.</p>
 <h3 id="366-la-liberation-des-ressources-le-try-avec-ressources">3.6.6. <span style="color: #1f4d78">La libération des ressources : le try avec ressources</span></h3>
 <p>Une <strong>ressource</strong> (un fichier ouvert, une connexion réseau, une connexion à une base de données) doit être fermée après usage, même si une erreur se produit pendant son utilisation. Avant Java 7, on la fermait dans une clause <em>[finally]</em>, ce qui demandait plusieurs lignes délicates. Java 7 a introduit le <strong>try avec ressources</strong> (« try-with-resources ») :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-101-1">1</a></span>
 <span class="normal"><a href="#__codelineno-101-2">2</a></span>
-<span class="normal"><a href="#__codelineno-101-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1"></a>try (Type ressource = ...) {
-<a id="__codelineno-101-2" name="__codelineno-101-2"></a>    utilisation de la ressource
-<a id="__codelineno-101-3" name="__codelineno-101-3"></a>}
+<span class="normal"><a href="#__codelineno-101-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-101-1" name="__codelineno-101-1"></a><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">Type</span><span class="w"> </span><span class="n">ressource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-101-2" name="__codelineno-101-2"></a><span class="w">    </span><span class="n">utilisation</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">ressource</span>
+<a id="__codelineno-101-3" name="__codelineno-101-3"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>La ressource déclarée entre parenthèses est fermée automatiquement (par un appel à sa méthode <em>[close()]</em>) à la sortie du bloc, que celui-ci se termine normalement ou par une exception. Le type de la ressource doit implémenter l&#x27;interface <em>[AutoCloseable]</em>, qui ne contient que la méthode <em>[close()]</em> ; c&#x27;est le cas de toutes les classes de fichiers, de réseau et de bases de données de Java. Plusieurs ressources peuvent être déclarées, séparées par des points-virgules : elles sont fermées dans l&#x27;ordre inverse de leur ouverture. Un tel <em>[try]</em> peut avoir des clauses <em>[catch]</em> et <em>[finally]</em>, exécutées après la fermeture des ressources.</p>
 <p>Java 7 a aussi introduit le <strong>multi-catch</strong> : une même clause <em>[catch]</em> peut traiter plusieurs types d&#x27;exceptions séparés par le caractère | : <strong><em>[catch (NumberFormatException | ArithmeticException e)]</em></strong>. Les types énumérés ne doivent pas dériver l&#x27;un de l&#x27;autre.</p>
@@ -5527,17 +5527,17 @@
 <p>Une application organisée en paquetages place ses classes dans des dossiers qui reproduisent le nom des paquetages (chapitre 4) ; c&#x27;est aussi l&#x27;organisation des projets Maven, que nous utiliserons à partir du chapitre 5. Rappelons enfin qu&#x27;en Java, la méthode <em>[main]</em> ne rend pas de valeur : le code de retour du programme se fixe avec <em>[System.exit]</em>.</p>
 <h2 id="39-les-enumerations">3.9. <span style="color: #2e74b5">Les énumérations</span></h2>
 <p>Une énumération est un type de données dont le domaine de valeurs est un ensemble de constantes nommées. Considérons un programme qui a à gérer des mentions à un examen. Il y en aurait cinq : Passable, Assez bien, Bien, Très bien, Excellent. On peut alors définir une énumération pour ces cinq constantes :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-116-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1"></a>enum Mentions { PASSABLE, ASSEZ_BIEN, BIEN, TRES_BIEN, EXCELLENT }
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-116-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-116-1" name="__codelineno-116-1"></a><span class="kd">enum</span><span class="w"> </span><span class="n">Mentions</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">PASSABLE</span><span class="p">,</span><span class="w"> </span><span class="n">ASSEZ_BIEN</span><span class="p">,</span><span class="w"> </span><span class="n">BIEN</span><span class="p">,</span><span class="w"> </span><span class="n">TRES_BIEN</span><span class="p">,</span><span class="w"> </span><span class="n">EXCELLENT</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Par convention, les noms des constantes s&#x27;écrivent en majuscules. Une variable peut être déclarée comme prenant ses valeurs dans l&#x27;énumération :</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-117-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1"></a>    Mentions maMention = Mentions.PASSABLE;
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-117-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-117-1" name="__codelineno-117-1"></a><span class="w">    </span><span class="n">Mentions</span><span class="w"> </span><span class="n">maMention</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Mentions</span><span class="p">.</span><span class="na">PASSABLE</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 <p>On peut comparer une variable aux différentes valeurs possibles de l&#x27;énumération avec l&#x27;opérateur == :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-118-1">1</a></span>
 <span class="normal"><a href="#__codelineno-118-2">2</a></span>
-<span class="normal"><a href="#__codelineno-118-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">(</span><span class="nv">maMention</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>Mentions.PASSABLE<span class="o">)</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-118-2" name="__codelineno-118-2"></a><span class="w">        </span>IO.println<span class="o">(</span><span class="s2">"Peut mieux faire"</span><span class="o">)</span><span class="p">;</span>
-<a id="__codelineno-118-3" name="__codelineno-118-3"></a><span class="w">    </span><span class="o">}</span>
+<span class="normal"><a href="#__codelineno-118-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-118-1" name="__codelineno-118-1"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">maMention</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Mentions</span><span class="p">.</span><span class="na">PASSABLE</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-118-2" name="__codelineno-118-2"></a><span class="w">        </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Peut mieux faire"</span><span class="p">);</span>
+<a id="__codelineno-118-3" name="__codelineno-118-3"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Contrairement à d&#x27;autres langages où une énumération n&#x27;est qu&#x27;un ensemble d&#x27;entiers nommés, une énumération Java est une <strong>classe</strong>, dérivée de la classe <em>[java.lang.Enum]</em>, dont les seuls objets sont les constantes déclarées. Chaque constante est un objet unique, créé une fois pour toutes : c&#x27;est pourquoi on peut les comparer avec ==. Chaque constante connaît son nom (<em>[name()]</em>, ou <em>[toString()]</em>) et son numéro d&#x27;ordre dans la déclaration (<em>[ordinal()]</em>, à partir de 0). Le compilateur ajoute à toute énumération deux méthodes statiques :</p>
 <ul>
@@ -5858,17 +5858,17 @@
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-123-1">1</a></span>
 <span class="normal"><a href="#__codelineno-123-2">2</a></span>
 <span class="normal"><a href="#__codelineno-123-3">3</a></span>
-<span class="normal"><a href="#__codelineno-123-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1"></a>void changeInt(int a) {
-<a id="__codelineno-123-2" name="__codelineno-123-2"></a>    a = 30;
-<a id="__codelineno-123-3" name="__codelineno-123-3"></a>    IO.println("Paramètre formel a=" + a);
-<a id="__codelineno-123-4" name="__codelineno-123-4"></a>}
+<span class="normal"><a href="#__codelineno-123-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-123-1" name="__codelineno-123-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">changeInt</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-123-2" name="__codelineno-123-2"></a><span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span>
+<a id="__codelineno-123-3" name="__codelineno-123-3"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Paramètre formel a="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<a id="__codelineno-123-4" name="__codelineno-123-4"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Dans la définition de la méthode, ligne 1, <em>[a]</em> est appelé un <strong>paramètre formel</strong>. Il n&#x27;est là que pour les besoins de la définition de la méthode <em>[changeInt]</em>. Il aurait tout aussi bien pu s&#x27;appeler <em>[b]</em>. Considérons maintenant une utilisation de cette méthode :</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-124-1">1</a></span>
 <span class="normal"><a href="#__codelineno-124-2">2</a></span>
-<span class="normal"><a href="#__codelineno-124-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1"></a>    int age = 20;
-<a id="__codelineno-124-2" name="__codelineno-124-2"></a>    changeInt(age);
-<a id="__codelineno-124-3" name="__codelineno-124-3"></a>    IO.println("Paramètre effectif age=" + age);
+<span class="normal"><a href="#__codelineno-124-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-124-1" name="__codelineno-124-1"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<a id="__codelineno-124-2" name="__codelineno-124-2"></a><span class="w">    </span><span class="n">changeInt</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>
+<a id="__codelineno-124-3" name="__codelineno-124-3"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Paramètre effectif age="</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">age</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>Ici, dans l&#x27;instruction de la ligne 2, <em>[age]</em> est le <strong>paramètre effectif</strong> qui va transmettre sa valeur au paramètre formel <em>[a]</em>. Nous nous intéressons à la façon dont un paramètre formel récupère la valeur d&#x27;un paramètre effectif.</p>
 <h3 id="3101-le-passage-par-valeur-seul-mode-de-java">3.10.1. <span style="color: #1f4d78">Le passage par valeur, seul mode de Java</span></h3>
